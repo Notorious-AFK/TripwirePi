@@ -22,7 +22,11 @@ apt-get install unattended-upgrades -y
  
 # Clean up DEB files
 # rm -f keybase_amd64.deb
- 
+# Modify Configuration files
+# sed 's/find/replace/' file
+sed 's/'//Unattended-Upgrade::Automatic-Reboot "false";'/'Unattended-Upgrade::Automatic-Reboot "true";'/g' /etc/apt/apt.d.conf.d/50unattended-upgrades
+
+
 
 # Final message
 echo All applications have been installed, the script will now quit.
