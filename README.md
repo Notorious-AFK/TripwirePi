@@ -26,16 +26,16 @@ Therefore an Active Directory Windows Server in Bristol could be: "BRI-WS-AD01"
 
 In this example the honeypot is masqueraded as a “log collector” in the network. The name for this honeypot is: BRI-LX-LOG01
 When configuring the hostname it is important to keep in mind the implications this creates and perform tests for the best possibility of deception.
-        -	What services can be seen externally?
-        -	What network traffic is the device generating?
+        - What services can be seen externally?
+        - What network traffic is the device generating?
                 o	HTTP/HTTPS, URL's
                 o	Destination IP’s
-        -	Does the externally availbable information make sense logistically?
+        - Does the externally availbable information make sense logistically?
                 o	SSH on a Log Collector linux machine serving as a backend service port
                     o Deceptive
                 o SSH on a file server fetching updates from raspbian.org?
                     o Poor Deception
-        -	Is the device and its supplied service placed in a part of the network that corelates with its purpose?
+        - Is the device and its supplied service placed in a part of the network that corelates with its purpose?
                 o SSH log server in a server VLAN
                     o Deceptive
                 o SSH log server on a guest Wifi VLAN
