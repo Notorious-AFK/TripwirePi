@@ -1,17 +1,16 @@
 # TripwirePi
 A Raspberry Pi based low-interaction SSH Honeypot built to be easy to install utilizing other open-source solutions.
-        - Port Scan Attack Detector
-        - Unattended-updates
-
+ * Port Scan Attack Detector
+ * Unattended-updates
 
 This project was started thought the authors Computer Security Bachelor dissertation at the University of South Wales.
 
 # Key principals for Deceptive capability
 Do not pretend to be something you are not.
-Factors for logistical coorelation
-        - Placement and Network properties (IP address, subnet, MAC address, adjacent devices)
-        - Allowed incomming traffic and enumeratable information (IPtables)
-        - Adjacently viewable traffic (HTTP/HTTPS, Dest IP, URL's, Service Ports)
+## Factors for logistical coorelation:
+ * Placement and Network properties (IP address, subnet, MAC address, adjacent devices)
+ * Allowed incomming traffic and enumeratable information (IPtables)
+ * Adjacently viewable traffic (HTTP/HTTPS, Dest IP, URL's, Service Ports)
 
 
 # Critical Configurations
