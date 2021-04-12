@@ -4,11 +4,12 @@
 :FORWARD ACCEPT [0:0]
 :OUTPUT ACCEPT [935:71906]
 
+# Allows for device requested traffic to not be logged as port scans
 -A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
--A INPUT -p tcp -m tcp --dport 22 -m conntrack --ctstate NEW,ESTABLISHED -j LOG --log-prefix "ILLEGALSSHCONNECTED "
--A INPUT -p tcp -m tcp --dport 22 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
 -A INPUT -p icmp -j ACCEPT
 -A INPUT -j LOG --log-prefix "DROP "
+-A INPUT -p tcp -m tcp --dport 22 -m conntrack --ctstate NEW,ESTABLISHED -j LOG --log-prefix "ILLEGALSSHCONNECTED "
+-A INPUT -p tcp -m tcp --dport 22 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
 -A INPUT -j DROP
 -A FORWARD -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
 -A FORWARD -j LOG --log-prefix "DROP "
