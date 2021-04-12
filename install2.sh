@@ -22,10 +22,12 @@ cd tripwirepi
 wget https://raw.githubusercontent.com/Notorious-AFK/TripwirePi/main/conf_files/50unattended-upgrades
 wget https://raw.githubusercontent.com/Notorious-AFK/TripwirePi/main/conf_files/rules.v4
 wget https://raw.githubusercontent.com/Notorious-AFK/TripwirePi/main/conf_files/psad.conf
-cp 50unattended-upgrades /etc/apt.conf.d/50unattended-upgrades
+cp 50unattended-upgrades /etc/apt/apt.conf.d/50unattended-upgrades
+mkdir /etc/iptables
 cp rules.v4 /etc/iptables/rules.v4
 cp psad.conf /etc/psad/psad.conf
 
+echo CONFIGURATION FILES TRANSFERRED
 # Install DEB files
 # dpkg -i keybase_amd64.deb
 #apt --fix-broken install -y # Remediate possible issues
