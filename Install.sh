@@ -25,9 +25,6 @@ c=$(( c < 70 ? 70 : c ))
 # Override localization settings so the output is in English language.
 export LC_ALL=C
 
-# Enable recursive globbing to find wireguard.ko in /lib/modules.
-shopt -s globstar
-
 main(){
 
 	######## FIRST CHECK ########
