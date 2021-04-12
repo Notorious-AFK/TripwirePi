@@ -19,7 +19,8 @@ Do not directly copy the examples provided below as this would lead back to this
 The examples are provided in order to guide the installing party to best possibly decieve an attacker into triggering the device, therefore the following configuration are vital to the devices functionality.
 
 ## 2. Hostname and deceptive logistics
-A common indication of device purpose in any corporate network is matching the corporate naming scheme used by adjacent devices and naming the fake service provided by the honeypot. Say the honeypot is to be located in Bristol among the internal servers. 
+A common indication of device purpose in any corporate network is matching the corporate naming scheme used by adjacent devices and naming the fake service provided by the honeypot.
+**Use your own corporate naming scheme.
 
 The company naming scheme could be for example: 
  * LOCATION-OS-SERVICE##
@@ -28,7 +29,7 @@ Therefore an Active Directory Windows Server in Bristol could be:
  * "BRI-WS-AD01"
 
 In this example the honeypot is masqueraded as a “log collector” in the network.
-The example name for this honeypot is: BRI-LX-LOG01
+**The example name for this honeypot is: BRI-LX-LOG01
 
 When configuring the hostname it is important to keep in mind the implications this creates and perform tests for the best possibility of deception.
  * What services can be seen externally?
