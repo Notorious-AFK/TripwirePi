@@ -6,11 +6,12 @@
  
 # Get the latest package lists and get dependencies
 apt-get update && apt upgrade
-apt install wget
- 
-# Get DEB files NO NEED
-# wget https://prerelease.keybase.io/keybase_amd64.deb
- 
+apt install wget -y
+apt install dialog -y
+
+#Add dialog box for setting a hostname on the system
+dialog --title "Set system Hostname" --msgbox "Configure a new hostname for your device.\\nMust be less than 28 characters\\nProvide a name that matches the service hosted while adhereing to the naming scheme used by adjacent devices.\\nRead the guidelines for naming your device at https://github.com/Notorious-AFK/TripwirePi/blob/main/README.md" 40 40
+
 # Install from Repo
 apt-get install psad -y
 apt-get install openssh-server -y
