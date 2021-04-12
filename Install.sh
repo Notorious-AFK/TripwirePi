@@ -8,6 +8,72 @@
 #
 # curl -L https://LINK TO THIS RAW CONTENT
 # Make sure you have `curl` installed
+######## SCRIPT ########
+
+# Find the rows and columns. Will default to 80x24 if it can not be detected.
+screen_size=$(stty size 2>/dev/null || echo 24 80)
+rows=$(echo "$screen_size" | awk '{print $1}')
+columns=$(echo "$screen_size" | awk '{print $2}')
+
+# Divide by two so the dialogs take up half of the screen, which looks nice.
+r=$(( rows / 2 ))
+c=$(( columns / 2 ))
+# Unless the screen is tiny
+r=$(( r < 20 ? 20 : r ))
+c=$(( c < 70 ? 70 : c ))
+
+# Override localization settings so the output is in English language.
+export LC_ALL=C
+
+# Enable recursive globbing to find wireguard.ko in /lib/modules.
+shopt -s globstar
+
+main(){
+
+	######## FIRST CHECK ########
+	# Must be root to install
+	echo ":::"
+	if [[ $EUID -eq 0 ]];then
+		echo "::: You are root."
+	else
+		echo "::: sudo will be used for the install."
+		# Check if it is actually installed
+		# If it isn't, exit because the install cannot complete
+		if [[ $(dpkg-query -s sudo) ]];then
+			export SUDO="sudo"
+			export SUDOE="sudo -E"
+		else
+			echo "::: Please install sudo or run this as root."
+			exit 1
+		fi
+	fi
+
+	# Check arguments for the undocumented flags
+	for ((i=1; i <= "$#"; i++)); do
+		j="$((i+1))"
+		case "${!i}" in
+			"--skip-space-check"        ) skipSpaceCheck=true;;
+			"--unattended"              ) runUnattended=true; unattendedConfig="${!j}";;
+			"--reconfigure"             ) reconfigure=true;;
+			"--show-unsupported-nics"   ) showUnsupportedNICs=true;;
+		esac
+	done
+
+	if [[ "${runUnattended}" == true ]]; then
+		echo "::: --unattended passed to install script, no whiptail dialogs will be displayed"
+		if [ -z "$unattendedConfig" ]; then
+			echo "::: No configuration file passed"
+			exit 1
+		else
+			if [ -r "$unattendedConfig" ]; then
+				# shellcheck disable=SC1090
+				source "$unattendedConfig"
+			else
+				echo "::: Can't open $unattendedConfig"
+				exit 1
+			fi
+		fi
+	fi
 
 
 # INITIALIZATION
