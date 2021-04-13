@@ -43,7 +43,7 @@ echo CONFIGURATION FILES TRANSFERRED
 # https://www.alanbonnici.com/2020/11/howto-send-email-from-google-from.html
 
 # USER INPUT EMAIL DETAILS
-dialog --title "Set Alert Email" --msgbox "The system needs an SMTP email address to send alerts to.\\nThis installer only supports SMTP gmail via MSMTP.\\n\\n\\nTo configure a non-gmail email read the Email Configuration at: https://github.com/Notorious-AFK/TripwirePi/blob/main/README.md\\n\\n\\nTo set up a Gmail account with SMTP follow these instructions: https://support.google.com/mail/answer/7126229?hl=en" 20 80
+dialog --title "Set Alert Email" --msgbox "The system needs an SMTP email address to send from.\\nThis installer only supports SMTP gmail via MSMTP.\\n\\n\\nTo configure a non-gmail email read the Email Configuration at: https://github.com/Notorious-AFK/TripwirePi/blob/main/README.md\\n\\n\\nTo set up a Gmail account with SMTP follow these instructions: https://support.google.com/mail/answer/7126229?hl=en" 20 80
 clear
 dialog --title "Alert Email Address" --inputbox "Enter your SMTP Enabled Gmail address:" 20 40 2>/tmp/gmail.txt
 clear
