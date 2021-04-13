@@ -70,6 +70,16 @@ rm /tmp/shortmail.txt
 rm /tmp/passmail.txt
 rm /tmp/msmtprc
 
+# Fix rights on msmtp
+chown root:msmtp /etc/msmtprc
+chmod 640 /etc/msmtprc
+touch /var/log/msmtp
+chmod 660 /var/log/msmpt
+echo set sendmail="/usr/bin/msmtp" > /tmp/mailrc
+echo smtp.gmail.com > /tmp/mailname
+cp /tmp/mailname /etc/mailname
+cp /tmp/mailrc /etc/mailrc
+
 # Modify repo lists to have HTTPS
 sed 's/http/https/g' /etc/apt/sources.list > /tmp/sources.list
 sed 's/http/https/g' /etc/apt/sources.list.d/raspi.list > /tmp/raspi.list
