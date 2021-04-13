@@ -1,9 +1,5 @@
 #!/bin/sh
  
-# Adjust additional repositories
-# apt-add-repository ppa:tista/adapta # Adapta theme repo
-
- 
 # Get the latest package lists and get dependencies
 apt-get update && apt upgrade
 apt install wget -y
@@ -33,15 +29,18 @@ cp rules.v4 /etc/iptables/rules.v4
 cp psad.conf /etc/psad/psad.conf
 
 echo CONFIGURATION FILES TRANSFERRED
-# Install DEB files
-# dpkg -i keybase_amd64.deb
-#apt --fix-broken install -y # Remediate possible issues
 
-# Clean up DEB files
-# rm -f keybase_amd64.deb
 # Modify Configuration files
 # sed 's/find/replace/' file
 
+# Add Alert email address and SMTP App password
+# https://www.alanbonnici.com/2020/11/howto-send-email-from-google-from.html
+
+# Modify repo lists to have HTTPS
+sed 's/http/https/g' /etc/apt/sources.list > /tmp/sources.list
+sed 's/http/https/g' /etc/apt/sources.list.d/raspi.list > /tmp/raspi.list
+cp /tmp/sources.list /etc/apt/sources.list
+cp /tmp/raspi.list /etc/apt/sources.list.d/raspi.list
 
 # Apply IPtables and make permanent
 apt-get install iptables-persistent -y
@@ -49,7 +48,8 @@ iptables-restore < /etc/iptables/rules.v4
 
 # Finalizing installation
 cp /tmp/hostname.txt /etc/hostname
-dialog --title "Installation Complete" --msgbox "Services have been installed.\\nPlease restart the system to get the new hostname." 25 90
+dialog --title "Installation Complete" --msgbox "Services have been installed.\\nPlease restart the system to get the new hostname." 25 35
+clear
 
 # Final message
 echo All applications have been installed, the script will now quit.
