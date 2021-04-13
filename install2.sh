@@ -50,6 +50,22 @@ clear
 dialog --title "Alert Email Address" --inputbox "Enter your Gmail App password:" 20 40 2>/tmp/passmail.txt
 clear
 
+#EMAIL CONFIG REPLACEMENTS
+replg=`cat /tmp/gmail.txt`
+replu=`cat /tmp/shortmail.txt`
+replp=`cat /tmp/passmail.txt`
+
+sed -i "s/BEFORETHEAT/${replu}/g" /tmp/msmtprc
+sed -i "s/EMAILAPPPASSWORD/${replp}/g" /tmp/msmtprc
+sed -i "s/YOUR@GMAIL/${replg}/g" /tmp/msmtprc     
+
+echo Email Config Replacements completed
+mv /tmp/msmtprc /etc/msmtrpc
+
+echo Copy Complete Cleaning up Temp
+rm /tmp/gmail.txt
+rm /tmp/shortmail.txt
+rm /tmp/passmail.txt
 
 # Modify repo lists to have HTTPS
 sed 's/http/https/g' /etc/apt/sources.list > /tmp/sources.list
