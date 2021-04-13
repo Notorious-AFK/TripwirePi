@@ -71,8 +71,8 @@ rm /tmp/passmail.txt
 rm /tmp/msmtprc
 
 # Fix rights on msmtp
-chown root:msmtp /etc/msmtprc
-chmod 640 /etc/msmtprc
+chown root:msmtp /etc/msmtrpc
+chmod 640 /etc/msmtrpc
 touch /var/log/msmtp
 chmod 660 /var/log/msmpt
 echo set sendmail="/usr/bin/msmtp" > /tmp/mailrc
