@@ -82,7 +82,7 @@ iptables-restore < /etc/iptables/rules.v4
 
 # Finalizing installation
 cp /tmp/hostname.txt /etc/hostname
-dialog --title "Installation Complete" --msgbox "Services have been installed.\\nPlease restart the system to get the new hostname." 10 20
+dialog --title "Installation Complete" --msgbox "Services have been installed.\\nPlease restart the system to get the new hostname." 10 40
 clear
 
 #ADD SERVICE RESTARTS
