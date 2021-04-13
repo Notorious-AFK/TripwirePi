@@ -24,6 +24,7 @@ wget -P /tmp/ https://raw.githubusercontent.com/Notorious-AFK/TripwirePi/main/co
 wget -P /tmp/ https://raw.githubusercontent.com/Notorious-AFK/TripwirePi/main/conf_files/rules.v4
 wget -P /tmp/ https://raw.githubusercontent.com/Notorious-AFK/TripwirePi/main/conf_files/psad.conf
 wget -P /tmp/ https://raw.githubusercontent.com/Notorious-AFK/TripwirePi/main/conf_files/ssh_config
+wget -P /tmp/ https://raw.githubusercontent.com/Notorious-AFK/TripwirePi/main/conf_files/msmtprc
 
 # Replace existing configurations
 cp /tmp/50unattended-upgrades /etc/apt/apt.conf.d/50unattended-upgrades
@@ -31,6 +32,7 @@ mkdir /etc/iptables
 cp /tmp/rules.v4 /etc/iptables/rules.v4
 cp /tmp/psad.conf /etc/psad/psad.conf
 cp /tmp/ssh_config /etc/ssh/ssh_config
+# MSMTPRC IS COPIED LATER DUE TO CONFIGURATIONAL CHANGES
 
 echo CONFIGURATION FILES TRANSFERRED
 
@@ -66,6 +68,7 @@ echo Copy Complete Cleaning up Temp
 rm /tmp/gmail.txt
 rm /tmp/shortmail.txt
 rm /tmp/passmail.txt
+rm /tmp/msmtprc
 
 # Modify repo lists to have HTTPS
 sed 's/http/https/g' /etc/apt/sources.list > /tmp/sources.list
