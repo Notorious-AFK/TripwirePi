@@ -60,7 +60,7 @@ sed -i "s/EMAILAPPPASSWORD/${replp}/g" /tmp/msmtprc
 sed -i "s/YOUR@GMAIL/${replg}/g" /tmp/msmtprc     
 
 echo Email Config Replacements completed
-mv /tmp/msmtprc /etc/msmtrpc
+cp /tmp/msmtprc /etc/msmtrpc
 
 echo Copy Complete Cleaning up Temp
 rm /tmp/gmail.txt
