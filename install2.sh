@@ -20,13 +20,15 @@ apt-get install unattended-upgrades -y
 # Download and replace configuration files
 mkdir tripwirepi/
 cd tripwirepi
-wget https://raw.githubusercontent.com/Notorious-AFK/TripwirePi/main/conf_files/50unattended-upgrades
-wget https://raw.githubusercontent.com/Notorious-AFK/TripwirePi/main/conf_files/rules.v4
-wget https://raw.githubusercontent.com/Notorious-AFK/TripwirePi/main/conf_files/psad.conf
-cp 50unattended-upgrades /etc/apt/apt.conf.d/50unattended-upgrades
+wget -P /tmp/ https://raw.githubusercontent.com/Notorious-AFK/TripwirePi/main/conf_files/50unattended-upgrades
+wget -P /tmp/ https://raw.githubusercontent.com/Notorious-AFK/TripwirePi/main/conf_files/rules.v4
+wget -P /tmp/ https://raw.githubusercontent.com/Notorious-AFK/TripwirePi/main/conf_files/psad.conf
+wget -P /tmp/ https://raw.githubusercontent.com/Notorious-AFK/TripwirePi/main/conf_files/ssh_config
+cp /tmp/50unattended-upgrades /etc/apt/apt.conf.d/50unattended-upgrades
 mkdir /etc/iptables
-cp rules.v4 /etc/iptables/rules.v4
-cp psad.conf /etc/psad/psad.conf
+cp /tmp/rules.v4 /etc/iptables/rules.v4
+cp /tmp/psad.conf /etc/psad/psad.conf
+cp /tmp/ssh_config /etc/ssh/ssh_config
 
 echo CONFIGURATION FILES TRANSFERRED
 
