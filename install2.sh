@@ -62,7 +62,7 @@ sed -i "s/EMAILAPPPASSWORD/${replp}/g" /tmp/msmtprc
 sed -i "s/YOUR@GMAIL/${replg}/g" /tmp/msmtprc     
 
 echo Email Config Replacements Completed
-cp /tmp/msmtprc /etc/msmtrpc
+cp /tmp/msmtprc /etc/msmtprc
 
 echo Copy Complete Cleaning up Temp
 rm /tmp/gmail.txt
@@ -71,8 +71,8 @@ rm /tmp/passmail.txt
 rm /tmp/msmtprc
 
 # Fix rights on msmtp
-chown root:msmtp /etc/msmtrpc
-chmod 640 /etc/msmtrpc
+chown root:msmtp /etc/msmtprc
+chmod 640 /etc/msmtprc
 touch /var/log/msmtp
 chmod 660 /var/log/msmtp
 echo set sendmail="/usr/bin/msmtp" > /tmp/mailrc
