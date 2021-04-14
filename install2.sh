@@ -95,14 +95,21 @@ sysctl -w net.ipv6.conf.default.disable_ipv6=1
 apt-get install iptables-persistent -y
 iptables-restore < /etc/iptables/rules.v4
 
+# Add Custon PSAD rule to Signatures
+cp /etc/psad/signatures /tmp/signatures
+echo 'alert tcp $EXTERNAL_NET any -> $HOME_NET 22 (msg:"SSH Connection"; reference:url,https://github.com/Notorious-AFK/TripwirePi; classtype:tripwirepi-alert; psad_dl:5;)' >> /tmp/signatures
+cp /tmp/signatures /etc/psad/signatures
+
+#ADD SERVICE RESTARTS
+systemctl restart psad.service
+systemctl restart psadwatchd.service
+
 # Finalizing installation
 dialog --title "Testing Email" --msgbox "To send a test email try the following:\\necho "test" | mail -s "test" your@email.com." 10 50
 clear
 cp /tmp/hostname.txt /etc/hostname
 dialog --title "Installation Complete" --msgbox "Services have been installed.\\nPlease restart the system to get the new hostname." 10 40
 clear
-
-#ADD SERVICE RESTARTS
 
 # Final message
 echo All applications have been installed, the script will now quit.
