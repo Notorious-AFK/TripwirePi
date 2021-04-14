@@ -1,0 +1,1 @@
+alert tcp $EXTERNAL_NET any -> $HOME_NET 22 (msg:"SSH Connection"; reference:url,https://github.com/Notorious-AFK/TripwirePi; classtype:tripwirepi-alert; psad_dl:5;)
