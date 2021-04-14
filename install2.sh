@@ -89,7 +89,9 @@ sed 's/http/https/g' /etc/apt/sources.list.d/raspi.list > /tmp/raspi.list
 cp /tmp/sources.list /etc/apt/sources.list
 cp /tmp/raspi.list /etc/apt/sources.list.d/raspi.list
 
-# Apply IPtables and make permanent
+# Diable IPv6 and Apply IPtables and make permanent
+sysctl -w net.ipv6.conf.all.disable_ipv6=1
+sysctl -w net.ipv6.conf.default.disable_ipv6=1
 apt-get install iptables-persistent -y
 iptables-restore < /etc/iptables/rules.v4
 
