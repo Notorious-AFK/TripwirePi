@@ -74,7 +74,7 @@ rm /tmp/msmtprc
 chown root:msmtp /etc/msmtrpc
 chmod 640 /etc/msmtrpc
 touch /var/log/msmtp
-chmod 660 /var/log/msmpt
+chmod 660 /var/log/msmtp
 echo set sendmail="/usr/bin/msmtp" > /tmp/mailrc
 echo smtp.gmail.com > /tmp/mailname
 cp /tmp/mailname /etc/mailname
