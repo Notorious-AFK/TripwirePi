@@ -25,13 +25,14 @@ wget -P /tmp/ https://raw.githubusercontent.com/Notorious-AFK/TripwirePi/main/co
 wget -P /tmp/ https://raw.githubusercontent.com/Notorious-AFK/TripwirePi/main/conf_files/psad.conf
 wget -P /tmp/ https://raw.githubusercontent.com/Notorious-AFK/TripwirePi/main/conf_files/ssh_config
 wget -P /tmp/ https://raw.githubusercontent.com/Notorious-AFK/TripwirePi/main/conf_files/msmtprc
+wget -P /tmp/ https://raw.githubusercontent.com/Notorious-AFK/TripwirePi/main/conf_files/mailrc
 
 # Replace existing configurations
 cp /tmp/50unattended-upgrades /etc/apt/apt.conf.d/50unattended-upgrades
 mkdir /etc/iptables
 cp /tmp/rules.v4 /etc/iptables/rules.v4
-cp /tmp/psad.conf /etc/psad/psad.conf
 cp /tmp/ssh_config /etc/ssh/ssh_config
+cp /tmp/mailrc /etc/mailrc
 # MSMTPRC IS COPIED LATER DUE TO CONFIGURATIONAL CHANGES
 
 echo CONFIGURATION FILES TRANSFERRED
@@ -56,13 +57,17 @@ clear
 replg=`cat /tmp/gmail.txt`
 replu=`cat /tmp/shortmail.txt`
 replp=`cat /tmp/passmail.txt`
+replh=`cat /tmp/hostname.txt`
 
 sed -i "s/BEFORETHEAT/${replu}/g" /tmp/msmtprc
 sed -i "s/EMAILAPPPASSWORD/${replp}/g" /tmp/msmtprc
 sed -i "s/YOUR@GMAIL/${replg}/g" /tmp/msmtprc     
+sed -i "s/REPLACE_EMAIL/${replg}/g" /tmp/psad.conf
+sed -i "s/REPLACE_HOSTNAME/${replh}/g" /tmp/psad.conf
 
 echo Email Config Replacements Completed
 cp /tmp/msmtprc /etc/msmtprc
+cp /tmp/psad.conf /etc/psad/psad.conf
 
 echo Copy Complete Cleaning up Temp
 rm /tmp/gmail.txt
@@ -75,10 +80,8 @@ chown root:msmtp /etc/msmtprc
 chmod 640 /etc/msmtprc
 touch /var/log/msmtp
 chmod 660 /var/log/msmtp
-echo set sendmail="/usr/bin/msmtp" > /tmp/mailrc
 echo smtp.gmail.com > /tmp/mailname
 cp /tmp/mailname /etc/mailname
-cp /tmp/mailrc /etc/mailrc
 
 # Modify repo lists to have HTTPS
 sed 's/http/https/g' /etc/apt/sources.list > /tmp/sources.list
