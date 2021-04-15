@@ -97,7 +97,7 @@ iptables-restore < /etc/iptables/rules.v4
 
 # Add Custon PSAD rule to Signatures
 cp /etc/psad/signatures /tmp/signatures
-echo 'alert tcp $EXTERNAL_NET any -> $HOME_NET 22 (msg:"SSH Connection"; reference:url,https://github.com/Notorious-AFK/TripwirePi; classtype:tripwirepi-alert; psad_dl:5;)' >> /tmp/signatures
+echo 'alert tcp $EXTERNAL_NET any -> $HOME_NET 22 (msg:"SSH Connection"; reference:url,https://github.com/Notorious-AFK/TripwirePi; classtype:tripwirepi-alert; psad_id:106484; psad_dl:5;)' >> /tmp/signatures
 cp /tmp/signatures /etc/psad/signatures
 
 #ADD SERVICE RESTARTS
