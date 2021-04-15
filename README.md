@@ -18,7 +18,11 @@ Do not pretend to be something you are not.
 Do not directly copy the examples provided below as this would lead back to this project site revealing the device as a honeypot.
 The examples are provided in order to guide the installing party to best possibly decieve an attacker into triggering the device, therefore the following configuration are vital to the devices functionality.
 
-## 2. Hostname and deceptive logistics
+## 2. Requirements before installing
+ * Installed Raspbian OS on device
+ * Changed password to unique and secure
+
+## 3. Hostname and deceptive logistics
 A common indication of device purpose in any corporate network is matching the corporate naming scheme used by adjacent devices and naming the fake service provided by the honeypot. Use your own corporate naming scheme.
 
 The naming scheme could be for example: 
@@ -45,3 +49,9 @@ When configuring the hostname it is important to keep in mind the implications t
        * Deceptive
      * SSH log server on a guest Wifi VLAN
        * Poor Deception
+
+## 4. Post installation testing
+ * psad -S
+ * iptables -L
+ * Send test email: echo "test" | mail -s "test" your@email.com.
+ * Connect to SSH from adjacent machine and check for alerts
