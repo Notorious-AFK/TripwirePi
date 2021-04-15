@@ -20,7 +20,9 @@ The examples are provided in order to guide the installing party to best possibl
 
 ## 2. Requirements before installing
  * Installed Raspbian OS on device
- * Changed password to unique and secure
+ * Changed user password(s) to unique and secure ones
+ * Gmail account with SMTP enabled
+   * MFA with App password recommended
 
 ## 3. Hostname and deceptive logistics
 A common indication of device purpose in any corporate network is matching the corporate naming scheme used by adjacent devices and naming the fake service provided by the honeypot. Use your own corporate naming scheme.
