@@ -102,7 +102,6 @@ cp /tmp/signatures /etc/psad/signatures
 
 #ADD SERVICE RESTARTS
 systemctl restart psad.service
-systemctl restart psadwatchd.service
 
 # Finalizing installation
 dialog --title "Testing Email" --msgbox "To send a test email try the following:\\necho 'test" | mail -s "test" your@email.com.' 10 50
