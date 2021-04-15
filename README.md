@@ -12,6 +12,7 @@ Do not pretend to be something you are not.
  * Allowed incomming traffic and enumeratable information (IPtables)
  * Adjacently viewable traffic (HTTP/HTTPS, Dest IP, URL's, Service Ports)
 
+# Disclaimer
 
 # Critical Configurations
 ## 1. Foreword
