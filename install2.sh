@@ -105,7 +105,7 @@ systemctl restart psad.service
 systemctl restart psadwatchd.service
 
 # Finalizing installation
-dialog --title "Testing Email" --msgbox "To send a test email try the following:\\necho "test" | mail -s "test" your@email.com." 10 50
+dialog --title "Testing Email" --msgbox "To send a test email try the following:\\necho 'test" | mail -s "test" your@email.com.' 10 50
 clear
 cp /tmp/hostname.txt /etc/hostname
 dialog --title "Installation Complete" --msgbox "Services have been installed.\\nPlease restart the system to get the new hostname." 10 40
