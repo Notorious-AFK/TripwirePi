@@ -10,7 +10,7 @@ dialog --title "TripewirePi installer" --msgbox "TripewirePi is a device created
 clear
 dialog --title "Set IP and Password" --msgbox "Please set a Static IP address and a unique password for this device prior to installation\\n\\nThe strength of this password is the only thing stopping the attackers from owning this device.\\n\\nKeep it secret, keep it safe.\\n\\nIf this has not been configured yet, cancel this installation using CTRL+C" 15 90
 clear
-dialog --title "Set system Hostname" --msgbox "Configure a new hostname for your device.\\nMust be less than 28 characters\\n\\nProvide a name that matches the service hosted while adhereing to the naming scheme used by adjacent devices.\\nRead the guidelines for naming your device at: https://github.com/Notorious-AFK/TripwirePi/blob/main/README.md" 25 90
+dialog --title "Set system Hostname" --msgbox "Configure a new hostname for your device.\\n\\nMust be less than 28 characters\\n\\nProvide a name that matches the service hosted while adhereing to the naming scheme used by adjacent devices.\\nRead the guidelines for naming your device at: https://github.com/Notorious-AFK/TripwirePi/blob/main/README.md" 15 90
 clear
 dialog --title "New Hostname" --inputbox "Enter new hostname reflecting company device branding:" 20 40 2>/tmp/hostname.txt
 clear
