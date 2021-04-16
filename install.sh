@@ -6,9 +6,9 @@ apt install wget -y
 apt install dialog -y
 
 #Add dialog box for setting a hostname on the system
-dialog --title "TripewirePi installer" --msgbox "TripewirePi is a device created with the intentions of being able to discover hackers in a local network.\\nSuccessfully decieveing attackers is not easy. Therefore it is imperative to this device that you read the documentation and follow the guidelines for configuration.\\n\\nRead the guidelines at: https://github.com/Notorious-AFK/TripwirePi/blob/main/README.md" 25 90
+dialog --title "TripewirePi installer" --msgbox "TripewirePi is a device created with the intentions of being able to discover hackers in a local network.\\n\\nSuccessfully decieveing attackers is not easy. Therefore it is imperative to this device that you read the documentation and follow the guidelines for configuration.\\n\\nRead the guidelines at: https://github.com/Notorious-AFK/TripwirePi/blob/main/README.md" 15 90
 clear
-dialog --title "Set system Hostname" --msgbox "Please set a Static IP address and a unique password for this device prior to installation\\nThe strength of this password is the only thing stopping the attackers from owning this device.\\n\\nKeep it secret, keep it safe." 25 90
+dialog --title "Set system Hostname" --msgbox "Please set a Static IP address and a unique password for this device prior to installation\\nThe strength of this password is the only thing stopping the attackers from owning this device.\\n\\nKeep it secret, keep it safe." 15 90
 clear
 dialog --title "Set system Hostname" --msgbox "Configure a new hostname for your device.\\nMust be less than 28 characters\\n\\nProvide a name that matches the service hosted while adhereing to the naming scheme used by adjacent devices.\\nRead the guidelines for naming your device at: https://github.com/Notorious-AFK/TripwirePi/blob/main/README.md" 25 90
 clear
