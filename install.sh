@@ -112,7 +112,7 @@ dialog --title "Installation Complete" --msgbox "Services have been installed.\\
 clear
 
 #SERVICE RESTARTS
-echo Attempting to restart PSAD service. Might time out.
+echo Attempting to restart PSAD service. Might timeout.
 systemctl restart psad.service
 
 # Final message
