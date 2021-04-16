@@ -2,6 +2,9 @@
 A Raspberry Pi based low-interaction SSH Honeypot built to be easy to install utilizing other open-source solutions.
  * Port Scan Attack Detector
  * Unattended-updates
+ * IPtables
+ * MSMTA
+ * Raspberry Pi
 
 This project was started thought the authors Computer Security Bachelor dissertation at the University of South Wales.
 
