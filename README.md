@@ -5,6 +5,14 @@ A Raspberry Pi based low-interaction SSH Honeypot built to be easy to install ut
 
 This project was started thought the authors Computer Security Bachelor dissertation at the University of South Wales.
 
+# Installation
+Read the sections below prior to installing!
+```
+wget https://raw.githubusercontent.com/Notorious-AFK/TripwirePi/main/install.sh
+sudo chmod +x install.sh
+sudo ./install.sh
+```
+
 # Key principals for Deceptive capability
 Do not pretend to be something you are not.
 ## Factors for logistical coorelation:
@@ -21,6 +29,7 @@ The examples are provided in order to guide the installing party to best possibl
 
 ## 2. Requirements before installing
  * Installed Raspbian OS on device
+   * with or without GUI
  * Changed user password to a unique and secure one
  * Set a static IP address
  * Gmail account with SMTP enabled
