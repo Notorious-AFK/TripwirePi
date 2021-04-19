@@ -24,6 +24,7 @@ Do not pretend to be something you are not.
  * Adjacently viewable traffic (HTTP/HTTPS, Dest IP, URL's, Service Ports)
 
 # Disclaimer
+Tripwire Pi is in no way a fully-fledged security solution and does not take any responsibility for any events related to the product or its usage. This is an open-source project with no claims of guaranteed success or attacker discovery. The project is “best-effort” following key concepts towards improving deception while maintaining security.
 
 # Critical Configurations
 ## 1. Foreword
