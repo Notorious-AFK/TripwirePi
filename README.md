@@ -18,6 +18,7 @@ sudo ./install.sh
 
 # Key principals for Deceptive capability
 Do not pretend to be something you are not.
+Device should look to be serving an actual purpose in the network.
 ## Factors for logistical coorelation:
  * Placement and Network properties (IP address, subnet, MAC address, adjacent devices)
  * Allowed incomming traffic and enumeratable information (IPtables)
