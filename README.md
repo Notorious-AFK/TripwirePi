@@ -72,3 +72,6 @@ When configuring the hostname it is important to keep in mind the implications t
  * iptables -L
  * Send test email: echo "test" | mail -s "test" your@email.com.
  * Connect to SSH from adjacent machine and check for alerts
+
+## 5. Mitigating false positives
+![Alert mitigation sequence (1)](https://user-images.githubusercontent.com/57632518/115236940-409b2e00-a11c-11eb-9e21-193506d35f35.png)
