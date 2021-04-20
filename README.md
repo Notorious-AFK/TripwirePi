@@ -7,6 +7,9 @@ A Raspberry Pi based low-interaction SSH Honeypot built to be easy to install ut
  * Raspberry Pi
 
 This project was started thought the authors Computer Security Bachelor dissertation at the University of South Wales.
+# Prerequesites
+ * Raspberry Pi
+ * Installed and updated Raspbian OS
 
 # Installation
 ```
