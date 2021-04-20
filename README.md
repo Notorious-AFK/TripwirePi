@@ -1,5 +1,5 @@
 # TripwirePi
-A Raspberry Pi based low-interaction SSH Honeypot built to be easy to install utilizing other open-source solutions.
+A Raspberry Pi based low-interaction SSH Honeypot built to be easy to install utilizing open-source solutions.
  * Port Scan Attack Detector
  * Unattended-updates
  * IPtables
