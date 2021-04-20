@@ -7,9 +7,6 @@ A Raspberry Pi based low-interaction SSH Honeypot built to be easy to install ut
  * Raspberry Pi
 
 This project was started thought the authors Computer Security Bachelor dissertation at the University of South Wales.
-# Prerequesites
- * Raspberry Pi
- * Installed and updated Raspbian OS
 
 # Installation
 ```
@@ -18,14 +15,6 @@ sudo chmod +x install.sh
 sudo ./install.sh
 ```
 Read the sections below prior to installing!
-
-# Key principals for Deceptive capability
-Do not pretend to be something you are not.
-Device should look to be serving an actual purpose in the network.
-## Factors for logistical coorelation:
- * Placement and Network properties (IP address, subnet, MAC address, adjacent devices)
- * Allowed incomming traffic and enumeratable information (IPtables)
- * Adjacently viewable traffic (HTTP/HTTPS, Dest IP, URL's, Service Ports)
 
 # Disclaimer
 Tripwire Pi is in no way a fully-fledged security solution and does not take any responsibility for any events related to the product or its usage. This is an open-source project with no claims of guaranteed success or attacker discovery. The project is “best-effort” following key concepts towards improving deception while maintaining security.
@@ -77,5 +66,14 @@ When configuring the hostname it is important to keep in mind the implications t
  * Send test email: echo "test" | mail -s "test" your@email.com.
  * Connect to SSH from adjacent machine and check for alerts
 
-## 5. Mitigating false positives
+## 5. Key principals for Deceptive capability
+Do not pretend to be something you are not.
+Device should look to be serving an actual purpose in the network.
+### Factors for logistical coorelation:
+ * Placement and Network properties (IP address, subnet, MAC address, adjacent devices)
+ * Allowed incomming traffic and enumeratable information (IPtables)
+ * Adjacently viewable traffic (HTTP/HTTPS, Dest IP, URL's, Service Ports)
+
+
+## 6. Mitigating false positives
 ![Alert mitigation sequence (1)](https://user-images.githubusercontent.com/57632518/115236940-409b2e00-a11c-11eb-9e21-193506d35f35.png)
