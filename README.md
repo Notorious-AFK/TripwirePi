@@ -9,12 +9,12 @@ A Raspberry Pi based low-interaction SSH Honeypot built to be easy to install ut
 This project was started thought the authors Computer Security Bachelor dissertation at the University of South Wales.
 
 # Installation
-Read the sections below prior to installing!
 ```
 wget https://raw.githubusercontent.com/Notorious-AFK/TripwirePi/main/install.sh
 sudo chmod +x install.sh
 sudo ./install.sh
 ```
+Read the sections below prior to installing!
 
 # Key principals for Deceptive capability
 Do not pretend to be something you are not.
