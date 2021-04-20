@@ -27,7 +27,7 @@ apt-get install msmtp-mta -y
 wget -P /tmp/ https://raw.githubusercontent.com/Notorious-AFK/TripwirePi/main/conf_files/50unattended-upgrades
 wget -P /tmp/ https://raw.githubusercontent.com/Notorious-AFK/TripwirePi/main/conf_files/rules.v4
 wget -P /tmp/ https://raw.githubusercontent.com/Notorious-AFK/TripwirePi/main/conf_files/psad.conf
-wget -P /tmp/ https://raw.githubusercontent.com/Notorious-AFK/TripwirePi/main/conf_files/ssh_config
+wget -P /tmp/ https://raw.githubusercontent.com/Notorious-AFK/TripwirePi/main/conf_files/sshd_config
 wget -P /tmp/ https://raw.githubusercontent.com/Notorious-AFK/TripwirePi/main/conf_files/msmtprc
 wget -P /tmp/ https://raw.githubusercontent.com/Notorious-AFK/TripwirePi/main/conf_files/mailrc
 
@@ -35,14 +35,11 @@ wget -P /tmp/ https://raw.githubusercontent.com/Notorious-AFK/TripwirePi/main/co
 cp /tmp/50unattended-upgrades /etc/apt/apt.conf.d/50unattended-upgrades
 mkdir /etc/iptables
 cp /tmp/rules.v4 /etc/iptables/rules.v4
-cp /tmp/ssh_config /etc/ssh/ssh_config
+cp /tmp/sshd_config /etc/ssh/sshd_config
 cp /tmp/mailrc /etc/mailrc
 # MSMTPRC IS COPIED LATER DUE TO CONFIGURATIONAL CHANGES
 
 echo CONFIGURATION FILES TRANSFERRED
-
-# Modify Configuration files
-# sed 's/find/replace/' file
 
 # Add Alert email address and SMTP App password
 # https://www.alanbonnici.com/2020/11/howto-send-email-from-google-from.html
@@ -112,8 +109,9 @@ dialog --title "Installation Complete" --msgbox "Services have been installed.\\
 clear
 
 #SERVICE RESTARTS
-echo Attempting to restart PSAD service. Might timeout.
+echo Attempting to restart PSAD and SSHD service. Might timeout.
 systemctl restart psad.service
+systemctl restart sshd.service
 
 # Final message
 echo All applications have been installed, the script will now quit.
