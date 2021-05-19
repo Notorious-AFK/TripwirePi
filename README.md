@@ -28,7 +28,7 @@ The examples are provided in order to guide the installing party to best possibl
  * Installed Raspbian OS on device
    * with or without GUI
  * Changed user password to a unique and secure one
-   * e.g. 16 characters
+   * e.g. 16 characters (More, not less!)
  * Set a static IP address
  * Created Gmail account with SMTP enabled
    * MFA enabled with Application password recommended
